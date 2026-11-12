@@ -1,0 +1,8 @@
+{
+  "name": "Remix Remix JARVIS GABITA · Auditoría ACESS \u0026 Bot Telegram",
+  "description": "Sistema de expedientes operativos y auditoría sanitaria ACESS con bóveda de 10 credenciales, flujo n8n/Drive, consola de comandos Telegram y guía Debian.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

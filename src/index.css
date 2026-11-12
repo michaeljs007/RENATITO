@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  color-scheme: dark;
+}
+
+code, kbd, samp, pre {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Luxury Obsidian & Deep Sapphire Backdrop with Floating Logo Watermark */
+.brand-backdrop {
+  position: relative;
+  background-color: #020713;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.brand-backdrop::before {
+  content: "";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 850px;
+  height: 850px;
+  max-width: 90vw;
+  max-height: 90vh;
+  background-image: url('/assets/aistudio/Logo_1x1_d0f68eff.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  opacity: 0.045;
+  filter: drop-shadow(0 0 90px rgba(56, 189, 248, 0.22));
+  pointer-events: none;
+  z-index: 0;
+  animation: logoFloat 20s ease-in-out infinite alternate;
+}
+
+@keyframes logoFloat {
+  0% {
+    transform: translate(-50%, -50%) scale(0.98);
+    opacity: 0.04;
+  }
+  100% {
+    transform: translate(-50%, -48%) scale(1.02);
+    opacity: 0.065;
+  }
+}
+
+.brand-backdrop::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 15% 10%, rgba(2, 132, 199, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 85% 25%, rgba(16, 185, 129, 0.09) 0%, transparent 50%),
+    radial-gradient(circle at 50% 85%, rgba(14, 165, 233, 0.08) 0%, transparent 55%),
+    radial-gradient(circle at 50% 50%, rgba(3, 15, 38, 0.45) 0%, transparent 80%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Glass Panels & Subtle Ambient Borders */
+.glass-panel {
+  background: rgba(6, 17, 38, 0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(56, 189, 248, 0.15);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.glass-panel-elevated {
+  background: rgba(8, 22, 48, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  box-shadow: 0 20px 40px -15px rgba(2, 132, 199, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.glass-input {
+  background: rgba(3, 10, 24, 0.85);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  color: #f1f5f9;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-input:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15), 0 0 15px rgba(2, 132, 199, 0.2);
+  background: rgba(4, 14, 34, 0.95);
+  outline: none;
+}
+
+/* Interactive Card Transitions */
+.interactive-card {
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.interactive-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(56, 189, 248, 0.35);
+  box-shadow: 0 12px 30px -10px rgba(2, 132, 199, 0.25);
+}
+
+/* Animations */
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInSlideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.5)); }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(3, 9, 23, 0.8);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(56, 189, 248, 0.25);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(56, 189, 248, 0.5);
+}
